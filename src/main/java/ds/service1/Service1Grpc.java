@@ -34,7 +34,7 @@ public final class Service1Grpc {
       ds.service1.ResponseMessage> getActiveAlarmMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "active_alarm",
+      fullMethodName = SERVICE_NAME + '/' + "ActiveAlarm",
       requestType = ds.service1.RequestMessage.class,
       responseType = ds.service1.ResponseMessage.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -48,18 +48,82 @@ public final class Service1Grpc {
               io.grpc.MethodDescriptor.<ds.service1.RequestMessage, ds.service1.ResponseMessage>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "service1.Service1", "active_alarm"))
+                  "service1.Service1", "ActiveAlarm"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   ds.service1.RequestMessage.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   ds.service1.ResponseMessage.getDefaultInstance()))
-                  .setSchemaDescriptor(new Service1MethodDescriptorSupplier("active_alarm"))
+                  .setSchemaDescriptor(new Service1MethodDescriptorSupplier("ActiveAlarm"))
                   .build();
           }
         }
      }
      return getActiveAlarmMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<ds.service1.RequestMessage,
+      ds.service1.ResponseMessage> getActiveLightSensorsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ActiveLightSensors",
+      requestType = ds.service1.RequestMessage.class,
+      responseType = ds.service1.ResponseMessage.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<ds.service1.RequestMessage,
+      ds.service1.ResponseMessage> getActiveLightSensorsMethod() {
+    io.grpc.MethodDescriptor<ds.service1.RequestMessage, ds.service1.ResponseMessage> getActiveLightSensorsMethod;
+    if ((getActiveLightSensorsMethod = Service1Grpc.getActiveLightSensorsMethod) == null) {
+      synchronized (Service1Grpc.class) {
+        if ((getActiveLightSensorsMethod = Service1Grpc.getActiveLightSensorsMethod) == null) {
+          Service1Grpc.getActiveLightSensorsMethod = getActiveLightSensorsMethod = 
+              io.grpc.MethodDescriptor.<ds.service1.RequestMessage, ds.service1.ResponseMessage>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "service1.Service1", "ActiveLightSensors"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  ds.service1.RequestMessage.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  ds.service1.ResponseMessage.getDefaultInstance()))
+                  .setSchemaDescriptor(new Service1MethodDescriptorSupplier("ActiveLightSensors"))
+                  .build();
+          }
+        }
+     }
+     return getActiveLightSensorsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<ds.service1.RequestMessage,
+      ds.service1.ResponseMessage> getActivePanicAlarmMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ActivePanicAlarm",
+      requestType = ds.service1.RequestMessage.class,
+      responseType = ds.service1.ResponseMessage.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<ds.service1.RequestMessage,
+      ds.service1.ResponseMessage> getActivePanicAlarmMethod() {
+    io.grpc.MethodDescriptor<ds.service1.RequestMessage, ds.service1.ResponseMessage> getActivePanicAlarmMethod;
+    if ((getActivePanicAlarmMethod = Service1Grpc.getActivePanicAlarmMethod) == null) {
+      synchronized (Service1Grpc.class) {
+        if ((getActivePanicAlarmMethod = Service1Grpc.getActivePanicAlarmMethod) == null) {
+          Service1Grpc.getActivePanicAlarmMethod = getActivePanicAlarmMethod = 
+              io.grpc.MethodDescriptor.<ds.service1.RequestMessage, ds.service1.ResponseMessage>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "service1.Service1", "ActivePanicAlarm"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  ds.service1.RequestMessage.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  ds.service1.ResponseMessage.getDefaultInstance()))
+                  .setSchemaDescriptor(new Service1MethodDescriptorSupplier("ActivePanicAlarm"))
+                  .build();
+          }
+        }
+     }
+     return getActivePanicAlarmMethod;
   }
 
   /**
@@ -99,6 +163,20 @@ public final class Service1Grpc {
       asyncUnimplementedUnaryCall(getActiveAlarmMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void activeLightSensors(ds.service1.RequestMessage request,
+        io.grpc.stub.StreamObserver<ds.service1.ResponseMessage> responseObserver) {
+      asyncUnimplementedUnaryCall(getActiveLightSensorsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void activePanicAlarm(ds.service1.RequestMessage request,
+        io.grpc.stub.StreamObserver<ds.service1.ResponseMessage> responseObserver) {
+      asyncUnimplementedUnaryCall(getActivePanicAlarmMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -108,6 +186,20 @@ public final class Service1Grpc {
                 ds.service1.RequestMessage,
                 ds.service1.ResponseMessage>(
                   this, METHODID_ACTIVE_ALARM)))
+          .addMethod(
+            getActiveLightSensorsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                ds.service1.RequestMessage,
+                ds.service1.ResponseMessage>(
+                  this, METHODID_ACTIVE_LIGHT_SENSORS)))
+          .addMethod(
+            getActivePanicAlarmMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                ds.service1.RequestMessage,
+                ds.service1.ResponseMessage>(
+                  this, METHODID_ACTIVE_PANIC_ALARM)))
           .build();
     }
   }
@@ -140,6 +232,22 @@ public final class Service1Grpc {
       asyncUnaryCall(
           getChannel().newCall(getActiveAlarmMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void activeLightSensors(ds.service1.RequestMessage request,
+        io.grpc.stub.StreamObserver<ds.service1.ResponseMessage> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getActiveLightSensorsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void activePanicAlarm(ds.service1.RequestMessage request,
+        io.grpc.stub.StreamObserver<ds.service1.ResponseMessage> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getActivePanicAlarmMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -168,6 +276,20 @@ public final class Service1Grpc {
     public ds.service1.ResponseMessage activeAlarm(ds.service1.RequestMessage request) {
       return blockingUnaryCall(
           getChannel(), getActiveAlarmMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public ds.service1.ResponseMessage activeLightSensors(ds.service1.RequestMessage request) {
+      return blockingUnaryCall(
+          getChannel(), getActiveLightSensorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public ds.service1.ResponseMessage activePanicAlarm(ds.service1.RequestMessage request) {
+      return blockingUnaryCall(
+          getChannel(), getActivePanicAlarmMethod(), getCallOptions(), request);
     }
   }
 
@@ -199,9 +321,27 @@ public final class Service1Grpc {
       return futureUnaryCall(
           getChannel().newCall(getActiveAlarmMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<ds.service1.ResponseMessage> activeLightSensors(
+        ds.service1.RequestMessage request) {
+      return futureUnaryCall(
+          getChannel().newCall(getActiveLightSensorsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<ds.service1.ResponseMessage> activePanicAlarm(
+        ds.service1.RequestMessage request) {
+      return futureUnaryCall(
+          getChannel().newCall(getActivePanicAlarmMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_ACTIVE_ALARM = 0;
+  private static final int METHODID_ACTIVE_LIGHT_SENSORS = 1;
+  private static final int METHODID_ACTIVE_PANIC_ALARM = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -222,6 +362,14 @@ public final class Service1Grpc {
       switch (methodId) {
         case METHODID_ACTIVE_ALARM:
           serviceImpl.activeAlarm((ds.service1.RequestMessage) request,
+              (io.grpc.stub.StreamObserver<ds.service1.ResponseMessage>) responseObserver);
+          break;
+        case METHODID_ACTIVE_LIGHT_SENSORS:
+          serviceImpl.activeLightSensors((ds.service1.RequestMessage) request,
+              (io.grpc.stub.StreamObserver<ds.service1.ResponseMessage>) responseObserver);
+          break;
+        case METHODID_ACTIVE_PANIC_ALARM:
+          serviceImpl.activePanicAlarm((ds.service1.RequestMessage) request,
               (io.grpc.stub.StreamObserver<ds.service1.ResponseMessage>) responseObserver);
           break;
         default:
@@ -286,6 +434,8 @@ public final class Service1Grpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new Service1FileDescriptorSupplier())
               .addMethod(getActiveAlarmMethod())
+              .addMethod(getActiveLightSensorsMethod())
+              .addMethod(getActivePanicAlarmMethod())
               .build();
         }
       }

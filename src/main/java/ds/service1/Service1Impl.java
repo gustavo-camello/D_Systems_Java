@@ -35,10 +35,14 @@ public final class Service1Impl {
     java.lang.String[] descriptorData = {
       "\n\016service1.proto\022\010service1\"!\n\016RequestMes" +
       "sage\022\017\n\007message\030\001 \001(\t\"\"\n\017ResponseMessage" +
-      "\022\017\n\007message\030\001 \001(\t2Q\n\010Service1\022E\n\014active_" +
-      "alarm\022\030.service1.RequestMessage\032\031.servic" +
-      "e1.ResponseMessage\"\000B\035\n\013ds.service1B\014Ser" +
-      "vice1ImplP\001b\006proto3"
+      "\022\017\n\007message\030\001 \001(\t2\350\001\n\010Service1\022D\n\013Active" +
+      "Alarm\022\030.service1.RequestMessage\032\031.servic" +
+      "e1.ResponseMessage\"\000\022K\n\022ActiveLightSenso" +
+      "rs\022\030.service1.RequestMessage\032\031.service1." +
+      "ResponseMessage\"\000\022I\n\020ActivePanicAlarm\022\030." +
+      "service1.RequestMessage\032\031.service1.Respo" +
+      "nseMessage\"\000B\035\n\013ds.service1B\014Service1Imp" +
+      "lP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -8,13 +8,15 @@ package service1;
 
 // Interface exported by the server.
 service Service1 {
-  
-  rpc active_alarm(RequestMessage) returns (ResponseMessage) {}
-    
+  rpc ActiveAlarm(RequestMessage) returns (ResponseMessage) {}
+
+  rpc ActiveLightSensors(RequestMessage) returns (ResponseMessage) {}
+
+  rpc ActivePanicAlarm(RequestMessage) returns (ResponseMessage) {}
 }
 
 message RequestMessage {
-  string message = 1;  
+  string message = 1;
 }
 
 message ResponseMessage {
