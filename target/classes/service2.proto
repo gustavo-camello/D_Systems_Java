@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "ds.service2";
+option java_outer_classname = "Service2Impl";
+
+package service2;
+
+// Interface exported by the server.
+service Service2 {
+  
+  rpc check_presence(RequestMessage) returns (ResponseMessage) {}
+
+  rpc turn_lights_on(hasPrecense) returns (ResponseMessage) {}
+
+  rpc turn_lights_off(hasPrecense) returns (ResponseMessage) {}
+    
+}
+
+message RequestMessage {
+  string text = 1;  
+}
+
+message ResponseMessage {
+  string text = 1;
+}
+
+message hasPrecense {
+  bool presence = 1;
+}
+ 

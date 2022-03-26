@@ -49,7 +49,7 @@ public class Service1 extends Service1ImplBase {
 	@Override
 	public void activeLightSensors(RequestMessage request, StreamObserver<ResponseMessage> responseObserver) {
 
-		// Receive the request, and depending on the message switch on and off the alarms.
+		// Receive the request, and depending on the message switch on and off the LightSensor.
 		String requestString = request.getMessage();
 		String sensorsState = "";
 		
@@ -71,7 +71,7 @@ public class Service1 extends Service1ImplBase {
 	@Override
 	public void activePanicAlarm(RequestMessage request, StreamObserver<ResponseMessage> responseObserver) {
 
-		// Receive the request, and depending on the message switch on and off the alarms.
+		// Receive the request, and depending on the message switch on the Panic Alarm.
 		String requestString = request.getMessage();
 		String panicAlarm = "";
 		
